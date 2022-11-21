@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block head_title %}
+Become a provider
+{% endblock head_title %}
+
+
+{% block content %}
+<div class="container py-5">
+    <div class="display-3 border-bottom fw-bold mb-3">{{request.user.provider|title}}</div>
+    <form action=""
+        method="post">
+        {% csrf_token %}
+        <div class="col-lg-4">
+            {{ form|crispy }}
+        </div>
+        <div class="my-3">
+            <button class="btn btn-outline-success"
+                type="submit">Become a provider</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
